@@ -1,0 +1,522 @@
+﻿
+* {
+    box-sizing: border-box !important;
+}
+
+.Switch, .Switch * {
+    -webkit-transition-property: all;
+    -moz-transition-property: all;
+    -o-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+/*
+Default
+*/
+
+.Switch_Default {
+    position: relative;
+    width: 64px;
+    height: 32px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.Switch_Default .SwitchLine {
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    left: 2px;
+    top: 14px;
+    z-index: 1;
+    background-color: #dadada;
+}
+
+.Switch_Default .SwitchButton {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: #dadada;
+    border-radius: 32px;
+}
+
+.Switch_Default.On .SwitchLine {
+    background-color: #00c0ff;
+}
+
+.Switch_Default.On .SwitchButton {
+    left: 32px;
+    background-color: #00c0ff;
+}
+
+.Switch_Default.On .SwitchButton {
+    left: 32px;
+    background-color: #00c0ff;
+}
+
+.Switch_Default.Disabled {
+    opacity: 0.3;
+}
+
+.Switch_Default.Disabled .SwitchButton {
+    /*opacity:0.5;*/
+}
+
+.Switch_Default.On.Disabled .SwitchLine {
+    /*opacity:0.5;*/
+}
+
+/* DefaultMin */
+.Switch_DefaultMin {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.Switch_DefaultMin .SwitchLine {
+    position: absolute;
+    width: 44px;
+    height: 2px;
+    left: 2px;
+    top: 11px;
+    z-index: 1;
+    background-color: #dadada;
+}
+
+.Switch_DefaultMin .SwitchButton {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: #dadada;
+    border-radius: 24px;
+}
+
+.Switch_DefaultMin.On .SwitchLine {
+    background-color: #00c0ff;
+}
+
+.Switch_DefaultMin.On .SwitchButton {
+    left: 24px;
+    background-color: #00c0ff;
+}
+
+.Switch_DefaultMin.Disabled {
+    opacity: 0.3;
+}
+
+.Switch_DefaultMin.Disabled .SwitchButton {
+    /*opacity:0.5;*/
+}
+
+.Switch_DefaultMin.On.Disabled .SwitchLine {
+    /*opacity:0.5;*/
+}
+
+/* Flat */
+.Switch_Flat {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f5a5a6;
+}
+
+.Switch_Flat .SwitchLine:before {
+    position: absolute;
+    content: "OFF";
+    color: #fff;
+    left: 60px;
+    top: 9px;
+}
+
+.Switch_Flat .SwitchLine:after {
+    position: absolute;
+    content: "ON";
+    color: #fff;
+    left: 15px;
+    top: 9px;
+}
+
+.Switch_Flat .SwitchButton {
+    position: absolute;
+    width: 45px;
+    height: 30px;
+    left: 5px;
+    top: 5px;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.Switch_Flat .SwitchButton:before {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 16px;
+    left: 15px;
+    top: 7px;
+    background-color: #f5a5a6;
+}
+
+.Switch_Flat .SwitchButton:after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 16px;
+    left: 26px;
+    top: 7px;
+    background-color: #f5a5a6;
+}
+
+.Switch_Flat.On {
+    background-color: #a7cce9;
+}
+
+.Switch_Flat.On .SwitchLine {
+}
+
+.Switch_Flat.On .SwitchButton {
+    left: 50px;
+}
+
+.Switch_Flat.On .SwitchButton:after, .Switch_Flat.On .SwitchButton:before {
+    background-color: #a7cce9;
+}
+
+.Switch_Flat.Disabled {
+    opacity: 0.3;
+}
+
+.Switch_Flat.Disabled .SwitchButton {
+    /*opacity:0.5;*/
+}
+
+.Switch_Flat.On.Disabled .SwitchLine {
+    /*opacity:0.5;*/
+}
+
+/* FlatRadius */
+.Switch_FlatRadius {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f5a5a6;
+    border-radius: 4px;
+}
+
+.Switch_FlatRadius .SwitchLine:before {
+    position: absolute;
+    content: "OFF";
+    color: #fff;
+    left: 60px;
+    top: 9px;
+}
+
+.Switch_FlatRadius .SwitchLine:after {
+    position: absolute;
+    content: "ON";
+    color: #fff;
+    left: 15px;
+    top: 9px;
+}
+
+.Switch_FlatRadius .SwitchButton {
+    position: absolute;
+    width: 45px;
+    height: 30px;
+    left: 5px;
+    top: 5px;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.Switch_FlatRadius .SwitchButton:before {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 16px;
+    left: 15px;
+    top: 7px;
+    background-color: #f5a5a6;
+}
+
+.Switch_FlatRadius .SwitchButton:after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 16px;
+    left: 26px;
+    top: 7px;
+    background-color: #f5a5a6;
+}
+
+.Switch_FlatRadius.On {
+    background-color: #a7cce9;
+}
+
+.Switch_FlatRadius.On .SwitchLine {
+}
+
+.Switch_FlatRadius.On .SwitchButton {
+    left: 50px;
+}
+
+.Switch_FlatRadius.On .SwitchButton:after, .Switch_FlatRadius.On .SwitchButton:before {
+    background-color: #a7cce9;
+}
+
+.Switch_FlatRadius.Disabled {
+    opacity: 0.3;
+}
+
+.Switch_FlatRadius.Disabled .SwitchButton {
+    /*opacity:0.5;*/
+}
+
+.Switch_FlatRadius.On.Disabled .SwitchLine {
+    /*opacity:0.5;*/
+}
+
+/* FlatCircular */
+.Switch_FlatCircular {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #f5a5a6;
+    border-radius: 20px;
+}
+
+.Switch_FlatCircular .SwitchLine:before {
+    position: absolute;
+    content: "OFF";
+    color: #fff;
+    left: 60px;
+    top: 9px;
+}
+
+.Switch_FlatCircular .SwitchLine:after {
+    position: absolute;
+    content: "ON";
+    color: #fff;
+    left: 15px;
+    top: 9px;
+}
+
+.Switch_FlatCircular .SwitchButton {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    left: -3px;
+    top: -3px;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 45px;
+    border: 1px solid #f5a5a6;
+}
+
+.Switch_FlatCircular.On {
+    background-color: #a7cce9;
+}
+
+.Switch_FlatCircular.On .SwitchLine {
+}
+
+.Switch_FlatCircular.On .SwitchButton {
+    border: 1px solid #a7cce9;
+    left: 57px;
+}
+
+.Switch_FlatCircular.On .SwitchButton:after, .Switch_FlatCircular.On .SwitchButton:before {
+    background-color: #a7cce9;
+}
+
+.Switch_FlatCircular.Disabled {
+    opacity: 0.3;
+}
+
+.Switch_FlatCircular.Disabled .SwitchButton {
+    /*opacity:0.5;*/
+}
+
+.Switch_FlatCircular.On.Disabled .SwitchLine {
+    /*opacity:0.5;*/
+}
+
+/* Green */
+.Switch_Green {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #b4aa9f;
+    border-radius: 20px;
+}
+
+.Switch_Green .SwitchLine:before {
+    position: absolute;
+    content: "\f00d";
+    color: #fff3e3;
+    left: 62px;
+    top: 8px;
+    /*font-awesome*/
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 25px !important;
+}
+
+.Switch_Green .SwitchLine:after {
+    position: absolute;
+    content: "\f00c";
+    color: #fff3e3;
+    left: 15px;
+    top: 8px;
+    /*font-awesome*/
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 25px !important;
+}
+
+.Switch_Green .SwitchButton {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    left: -3px;
+    top: -3px;
+    z-index: 2;
+    background-color: #fff3e3;
+    border-radius: 45px;
+    border: 3px solid #b4aa9f;
+}
+
+.Switch_Green.On {
+    background-color: #6ebf5f;
+}
+
+.Switch_Green.On .SwitchLine {
+}
+
+.Switch_Green.On .SwitchButton {
+    border: 3px solid #6ebf5f;
+    left: 57px;
+}
+
+.Switch_Green.On .SwitchButton:after, .Switch_Green.On .SwitchButton:before {
+    background-color: #a7cce9;
+}
+
+.Switch_Green.Disabled {
+    opacity: 0.3;
+}
+
+.Switch_Green.Disabled .SwitchButton {
+    /*opacity:0.5;*/
+}
+
+.Switch_Green.On.Disabled .SwitchLine {
+    /*opacity:0.5;*/
+}
+
+
+
+
+/* Icon */
+.Switch_Icon {
+    position: relative;
+    width: 90px;
+    height: 50px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 30px;
+    border: 6px solid #fff;
+    margin: 0 38px;
+}
+
+.Switch_Icon .SwitchLine:before {
+    position: absolute;
+    content: "\f1e3";
+    color: #1b5a95;
+    left: 96px;
+    top: 8px;
+    /*font-awesome*/
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 25px !important;
+}
+
+.Switch_Icon .SwitchLine:after {
+    position: absolute;
+    content: "\f1db";
+    color: #fff;
+    left: -42px;
+    top: 8px;
+    /*font-awesome*/
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 25px !important;
+}
+
+.Switch_Icon .SwitchButton {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 6px;
+    top: 6px;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 26px;
+}
+
+.Switch_Icon.On {
+}
+
+.Switch_Icon.On .SwitchLine {
+}
+
+.Switch_Icon.On .SwitchButton {
+    left: 48px;
+}
+
+.Switch_Icon.On .SwitchLine:after{
+    color: #1b5a95;
+}
+
+.Switch_Icon.On .SwitchLine:before {
+    color: #fff;
+}
+
+.Switch_Icon.Disabled {
+    opacity: 0.3;
+}
+
+.Switch_Icon.Disabled .SwitchButton {
+    /*opacity:0.5;*/
+}
+
+.Switch_Icon.On.Disabled .SwitchLine {
+    /*opacity:0.5;*/
+}
