@@ -11,7 +11,9 @@
             var _ATTR = {
                 "id": $.simpleSwitch.Id,
                 "theme": $.simpleSwitch.Theme,
-                "end": $.simpleSwitch.End
+                "end": $.simpleSwitch.End,
+                "change": $.simpleSwitch.input_Change,
+                "click": $.simpleSwitch.input_Click
             };
             $.extend(_ATTR, ATTR);
             var _ALL = $(this), a = _ATTR, _NUM = Switch_Num, _ID = a["id"], _THEME = a["theme"];
@@ -19,7 +21,7 @@
                 var _THIS = $(this);
                 _THIS.hide();
                 _THIS.attr("simpleSwitch", _NUM);
-                _THIS.after('<div class="' + _ID + ' ' + _ID + '_' + _THEME + '" id="' + _ID + _NUM + '"><div class="SwitchLine"></div><span class="SwitchButton"></span></div>');
+                _THIS.after('<div class="' + _ID + ' ' + _ID + '_' + _THEME + '" id="' + _ID + _NUM + '"><div class="' + _ID + 'Line"></div><span class="' + _ID + 'Button"></span></div>');
                 var _CONTAINER = $('#' + _ID + _NUM);
                 var _type = _THIS.attr('type');
                 var _name = _THIS.attr('name');
@@ -28,10 +30,12 @@
                 }
                 $.simpleSwitch.Init(this, _CONTAINER);
                 _THIS.change(function () {
-                    $.simpleSwitch.Change(this, _CONTAINER, _type, _name);
+                    $.simpleSwitch.Change(_THIS, _CONTAINER, _type, _name);
+                    a["change"](_THIS);
                 });
                 _CONTAINER.click(function () {
-                    $.simpleSwitch.Click(this, _THIS);
+                    $.simpleSwitch.Click(_THIS, _THIS);
+                    a["click"](_THIS);
                 });
                 _NUM++;
                 a["end"](_THIS, _CONTAINER);
@@ -60,19 +64,18 @@
             input.click();
         },
         Change: function (t, cont, type, name) {
-            var $T = $(t);
             var $type = cont.attr('type');
-            if (type) {
+            if ($type) {
                 $("div[type='" + $type + "']").removeClass('On');
                 $("input[type='" + type + "'][name='" + name + "']").attr(this.Result, "false");
             }
-            var checked = $T.attr('checked');
+            var checked = t.attr('checked');
             if (checked) {
                 cont.addClass('On');
-                $T.attr(this.Result, "true");
+                t.attr(this.Result, "true");
             } else {
                 cont.removeClass('On');
-                $T.attr(this.Result, "false");
+                t.attr(this.Result, "false");
             }
         },
         Init: function (t, cont) {
@@ -85,14 +88,15 @@
                 cont.removeClass('On');
                 $T.attr(this.Result, "false");
             }
-
             if ($T.attr('disabled')) {
                 cont.addClass('Disabled');
             }
-
         },
         End: function (t, c) {
+        },
+        input_Change: function (t) {
+        },
+        input_Click: function (t) {
         }
-
     });
 })(jQuery);

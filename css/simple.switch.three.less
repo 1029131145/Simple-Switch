@@ -1,0 +1,582 @@
+
+* {
+  box-sizing: border-box !important;
+}
+
+.Switch, .Switch *,.Switch *:after,.Switch *:before {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+/* Default */
+.Switch_Default {
+  position: relative;
+  width: 64px;
+  height: 32px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  .SwitchLine {
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    left: 2px;
+    top: 14px;
+    z-index: 1;
+    background-color: #dadada;
+  }
+  .SwitchButton {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border: 4px solid #dadada;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    border-radius: 32px;
+  }
+  &.Disabled {
+    opacity: 0.4;
+    .SwitchButton {
+      /*opacity:0.5;*/
+    }
+  }
+  &.On {
+    .SwitchLine {
+      background-color: #00c0ff;
+    }
+    .SwitchButton {
+      left: 32px;
+      border: 4px solid #00c0ff;
+      background-color: #fff;
+    }
+    &.Disabled {
+      .SwitchLine {
+        /*opacity:0.5;*/
+      }
+    }
+  }
+}
+
+/* DefaultMin */
+.Switch_DefaultMin {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  .SwitchLine {
+    position: absolute;
+    width: 44px;
+    height: 2px;
+    left: 2px;
+    top: 11px;
+    z-index: 1;
+    background-color: #dadada;
+  }
+  .SwitchButton {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #dadada;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 24px;
+  }
+  &.Disabled {
+    opacity: 0.4;
+  }
+  &.On {
+    .SwitchLine {
+      background-color: #00c0ff;
+    }
+    .SwitchButton {
+      left: 24px;
+      border: 2px solid #00c0ff;
+      background-color: #fff;
+    }
+  }
+
+}
+
+/* Flat */
+.Switch_Flat {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #f5a5a6;
+  .SwitchLine:before {
+    position: absolute;
+    content: "OFF";
+    color: #fff;
+    left: 60px;
+    top: 9px;
+  }
+  .SwitchLine:after {
+    position: absolute;
+    content: "ON";
+    color: #fff;
+    left: 15px;
+    top: 9px;
+  }
+  .SwitchButton {
+    position: absolute;
+    width: 45px;
+    height: 30px;
+    left: 5px;
+    top: 5px;
+    z-index: 2;
+    background-color: #fff;
+  }
+  .SwitchButton:before {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 16px;
+    left: 15px;
+    top: 7px;
+    background-color: #f5a5a6;
+  }
+  .SwitchButton:after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 16px;
+    left: 26px;
+    top: 7px;
+    background-color: #f5a5a6;
+  }
+  &.Disabled {
+    opacity: 0.4;
+  }
+  &.On {
+    background-color: #a7cce9;
+    .SwitchButton {
+      left: 50px;
+    }
+    .SwitchButton:after, .SwitchButton:before {
+      background-color: #a7cce9;
+    }
+  }
+}
+
+/* FlatRadius */
+.Switch_FlatRadius {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #f5a5a6;
+  border-radius: 4px;
+  .SwitchLine:before {
+    position: absolute;
+    content: "OFF";
+    color: #fff;
+    left: 60px;
+    top: 9px;
+  }
+  .SwitchLine:after {
+    position: absolute;
+    content: "ON";
+    color: #fff;
+    left: 15px;
+    top: 9px;
+  }
+  .SwitchButton {
+    position: absolute;
+    width: 45px;
+    height: 30px;
+    left: 5px;
+    top: 5px;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+  .SwitchButton:before {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 16px;
+    left: 15px;
+    top: 7px;
+    background-color: #f5a5a6;
+  }
+  .SwitchButton:after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 16px;
+    left: 26px;
+    top: 7px;
+    background-color: #f5a5a6;
+  }
+  &.Disabled {
+    opacity: 0.4;
+  }
+  &.On {
+    background-color: #a7cce9;
+    .SwitchButton {
+      left: 50px;
+    }
+    .SwitchButton:after, .SwitchButton:before {
+      background-color: #a7cce9;
+    }
+  }
+}
+
+/* FlatCircular */
+.Switch_FlatCircular {
+  position: relative;
+  width: 65px;
+  height: 30px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #f5a5a6;
+  border-radius: 20px;
+  .SwitchLine:before {
+    position: absolute;
+    content: "OFF";
+    color: #fff;
+    left: 37px;
+    font-size: 12px;
+    top: 7px;
+  }
+  .SwitchLine:after {
+    position: absolute;
+    content: "ON";
+    color: #fff;
+    left: 9px;
+    font-size: 12px;
+    top: 7px;
+  }
+  .SwitchButton {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: -3px;
+    top: -3px;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 45px;
+    border: 2px solid #f5a5a6;
+  }
+  &.Disabled {
+    opacity: 0.4;
+  }
+  &.On {
+    background-color: #a7cce9;
+    .SwitchButton {
+      border: 2px solid #a7cce9;
+      left: 32px;
+    }
+    .SwitchButton:after, .SwitchButton:before {
+      background-color: #a7cce9;
+    }
+  }
+}
+
+/* Green */
+.Switch_Green {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #b4aa9f;
+  border-radius: 20px;
+  .SwitchLine:before {
+    position: absolute;
+    content: "\f00d";
+    color: #fff3e3;
+    left: 62px;
+    top: 8px;
+    /*font-awesome*/
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 25px !important;
+  }
+  .SwitchLine:after {
+    position: absolute;
+    content: "\f00c";
+    color: #fff3e3;
+    left: 15px;
+    top: 8px;
+    /*font-awesome*/
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 25px !important;
+  }
+  .SwitchButton {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    left: -3px;
+    top: -3px;
+    z-index: 2;
+    background-color: #fff3e3;
+    border-radius: 45px;
+    border: 3px solid #b4aa9f;
+  }
+  &.Disabled {
+    opacity: 0.4;
+  }
+  &.On {
+    background-color: #6ebf5f;
+    .SwitchButton {
+      border: 3px solid #6ebf5f;
+      left: 57px;
+    }
+    .SwitchButton:after, .SwitchButton:before {
+      background-color: #a7cce9;
+    }
+  }
+}
+
+/* Icon */
+.Switch_Icon {
+  position: relative;
+  width: 90px;
+  height: 50px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 30px;
+  border: 6px solid #fff;
+  margin: 0 38px;
+  .SwitchLine:before {
+    position: absolute;
+    content: "\f1e3";
+    color: #1b5a95;
+    left: 96px;
+    top: 8px;
+    /*font-awesome*/
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 25px !important;
+  }
+  .SwitchLine:after {
+    position: absolute;
+    content: "\f1db";
+    color: #fff;
+    left: -42px;
+    top: 8px;
+    /*font-awesome*/
+    font: normal normal normal 14px/1 FontAwesome !important;
+    font-size: 25px !important;
+  }
+  .SwitchButton {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 6px;
+    top: 6px;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 26px;
+  }
+  &.Disabled {
+    opacity: 0.4;
+  }
+  &.On {
+    .SwitchButton {
+      left: 48px;
+    }
+    .SwitchLine:after {
+      color: #1b5a95;
+    }
+    .SwitchLine:before {
+      color: #fff;
+    }
+  }
+}
+
+/* Iphone */
+.Switch_Iphone {
+  position: relative;
+  width: 50px;
+  height: 30px;
+  border: 1px solid #dfdfdf;
+  cursor: pointer;
+  border-radius: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #fff;
+  .SwitchButton {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  &.Disabled {
+    opacity: 0.4;
+  }
+  &.On {
+    box-shadow: rgb(100, 189, 99) 0 0 0 16px inset;
+    border-color: rgb(100, 189, 99);
+    transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
+    background-color: rgb(100, 189, 99);
+
+    .SwitchButton {
+      left: 20px;
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
+
+/* Lcs */
+.Switch_Lcs {
+  position: relative;
+  width: 73px;
+  height: 28px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #b2b2b2;
+  border-radius: 14px;
+  overflow: hidden;
+  .SwitchLine:before {
+    position: absolute;
+    content: "OFF";
+    color: #fff;
+    right: 10px;
+    top: 4px;
+    font-size: 14px;
+    -webkit-transition: all .2s ease-in-out .1s;
+    -ms-transition: all .2s ease-in-out .1s;
+    transition: all .2s ease-in-out .1s;
+  }
+  .SwitchLine:after {
+    position: absolute;
+    content: "ON";
+    color: #fff;
+    left: -70px;
+    top: 4px;
+    font-size: 14px;
+    -webkit-transition: all .2s ease-in-out .1s;
+    -ms-transition: all .2s ease-in-out .1s;
+    transition: all .2s ease-in-out .1s;
+  }
+  .SwitchButton {
+    position: absolute;
+    top: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    left: 3px;
+  }
+
+  &.Disabled {
+    opacity: 0.4;
+  }
+  &.On {
+    background: #75b936;
+    box-shadow: 0 0 2px #579022 inset;
+    .SwitchButton {
+      left: 48px;
+    }
+
+    .SwitchLine:before {
+      right: -70px;
+    }
+    .SwitchLine:after {
+      left: 10px;
+    }
+  }
+}
+
+/* LIKE */
+.Switch_LIKE {
+  position: relative;
+  width: 67.5px;
+  height: 30px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #f88c8c;
+  border-radius: 20px;
+  margin: 3px;
+  .SwitchLine:before {
+    position: absolute;
+    content: "OFF";
+    color: #fff;
+    font-size: 12px;
+    left: 40px;
+    top: 6px;
+  }
+  .SwitchLine:after {
+    position: absolute;
+    content: "ON";
+    color: #fff;
+    left: 9px;
+    font-size: 12px;
+    top: 6px;
+  }
+  .SwitchButton {
+    position: absolute;
+    width: 37.5px;
+    height: 37.5px;
+    left: -3.75px;
+    top: -3.75px;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 45px;
+    box-shadow: 0 2px 5px rgba(248, 140, 140, 0.4);
+  }
+  .SwitchButton:after{
+    box-sizing: border-box !important;
+    position: absolute;
+    width: 11.25px;
+    height: 11.25px;
+    border: 2.25px solid #f88c8c;
+    border-radius: 10px;
+    content: "";
+    display: inline-block;
+    top: 13.125px;
+    left: 13.125px;
+    background-color: #fff;
+  }
+
+  &.Disabled {
+    opacity: 0.4;
+  }
+  &.On {
+    background-color: #69ddf1;
+    .SwitchButton {
+      box-shadow: 0 2px 5px rgba(105, 221, 241, 0.4);
+      left: 33.75px;
+    }
+    .SwitchButton:after{
+      width: 0;
+      height: 11.25px;
+      border: 2.25px solid #69ddf1;
+      left: 17.375px;
+    }
+  }
+}
