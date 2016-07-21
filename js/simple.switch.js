@@ -13,7 +13,8 @@
                 "theme": $.simpleSwitch.Theme,
                 "end": $.simpleSwitch.End,
                 "change": $.simpleSwitch.input_Change,
-                "click": $.simpleSwitch.input_Click
+                "click": $.simpleSwitch.input_Click,
+                "judge": $.simpleSwitch.input_Judge
             };
             $.extend(_ATTR, ATTR);
             var _ALL = $(this), a = _ATTR, _NUM = Switch_Num, _ID = a["id"], _THEME = a["theme"];
@@ -34,8 +35,10 @@
                     a["change"](_THIS);
                 });
                 _CONTAINER.click(function () {
-                    $.simpleSwitch.Click(_THIS, _THIS);
-                    a["click"](_THIS);
+                    if (a["judge"](_THIS)) {
+                        $.simpleSwitch.Click(_THIS, _THIS);
+                        a["click"](_THIS);
+                    }
                 });
                 _NUM++;
                 a["end"](_THIS, _CONTAINER);
@@ -97,6 +100,9 @@
         input_Change: function (t) {
         },
         input_Click: function (t) {
+        },
+        input_Judge: function (t) {
+            return true;
         }
     });
 })(jQuery);
