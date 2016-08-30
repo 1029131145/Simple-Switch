@@ -2,6 +2,14 @@ body {
 
 }
 
+@font-face {
+    font-family: 'Architects Daughter';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Architects Daughter'), local('ArchitectsDaughter'), url(https://fonts.gstatic.com/s/architectsdaughter/v6/RXTgOOQ9AAtaVOHxx0IUBM3t7GjCYufj5TXV5VnA2p8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +18,10 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+pre, pre *, .title *, .footer *, .m5 * {
+    font-family: 'Architects Daughter';
 }
 
 div,
@@ -87,21 +99,22 @@ a {
     border-bottom: 1px dashed #fff;
 }
 
-.m1:last-child{
+.m1:last-child {
     border-bottom: 0 !important;
 }
 
-.m2{
-    border-bottom:1px dashed #ddd;
+.m2 {
+    border-bottom: 1px dashed #ddd;
 }
 
-
-.m3{
+.m3 {
     background-color: #fff3e3;
 }
-.m4{
+
+.m4 {
     background-color: #3d8ad1;
 }
+
 .m0 .main {
     font-size: 35px;
     text-align: center;
@@ -110,6 +123,7 @@ a {
     position: relative;
     z-index: 99;
     color: #fff;
+    font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
 }
 
 .iframe {
@@ -137,43 +151,44 @@ a {
     color: #4f9fcf;
 }
 
-.pre .str{
+.pre .str {
     color: #d44950;
 }
 
-.pre .kwd{
+.pre .kwd {
     color: #aa6708;
 }
 
-.title .p1{
+.title .p1 {
     margin-bottom: 20px;
 }
 
-.footer .p{
+.footer .p {
     font-size: 18px;
     line-height: 25px;
 }
 
-.footer .p a{
+.footer .p a {
     color: #000;
 }
 
-.m5{
+.m5 {
     border-top: 1px solid #ddd;
 }
-.m5 .main{
+
+.m5 .main {
     text-align: center;
     padding: 15px 0;
 }
 
-.m6{
+.m6 {
     background: #f8ecf1;
 }
 
-.m7{
+.m7 {
     background-color: #f3f3f3;
 }
 
-.m8{
+.m8 {
     border-bottom: 1px solid #ddd;
 }
